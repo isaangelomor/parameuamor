@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>para o meu amor </title>
+    <style>
+        /* Configuração geral da página */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(30, 18, 202);
+        }
+
+        /* Tela inicial com botão */
+        .start-screen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(205, 218, 23);
+        }
+
+        /* Botão de abertura */
+        #startButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #startButton:hover {
+            background-color: #0056b3;
+        }
+
+        /* Imagem principal */
+        .image-container {
+            display: none; /* Começa oculta */
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tela inicial com botão -->
+    <div class="start-screen">
+        <button id="startButton"> clica aqui mor</button>
+    </div>
+
+    <!-- Imagem principal -->
+    <div class="image-container">
+        <img src="fotos para site/imagem/WhatsApp Image 2025-01-30 at 08.54.04.jpg" alt=" meu amor.jpeg">
+    </div>
+
+    <!-- Música de fundo -->
+    <audio id="backgroundMusic" loop>
+        <source src="audio/audio da pasta/Iframe Estar em Tuas Mãos [fUrwFG9tUnc].mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <script>
+        document.getElementById("startButton").addEventListener("click", function () {
+            document.querySelector(".start-screen").style.display = "none"; // Esconde o botão
+            document.querySelector(".image-container").style.display = "block"; // Mostra a imagem
+            document.getElementById("backgroundMusic").play(); // Toca a música
+        });
+        
+    </script>
+<script>
+    function createFloatingText() {
+        let text = document.createElement("div");
+        text.innerText = "EU TE AMO 💖";
+        text.classList.add("floating-text");
+
+        // Posição aleatória dentro da tela
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
+
+        text.style.position = "absolute";
+        text.style.left = `${x}px`;
+        text.style.top = `${y}px`;
+        text.style.fontSize = "20px";
+        text.style.color = "black";
+        text.style.fontWeight = "bold";
+        text.style.animation = "fadeInOut 3s ease-in-out infinite";
+        text.style.userSelect = "none";
+        text.style.pointerEvents = "none";
+
+        document.body.appendChild(text);
+
+        // Remove o texto após um tempo para evitar excesso na tela
+        setTimeout(() => {
+            text.remove();
+        }, 5000);
+    }
+
+    // Faz o texto aparecer continuamente a cada 0.5 segundos
+    setInterval(createFloatingText, 500);
+</script>
+
+</body>
+</html>
